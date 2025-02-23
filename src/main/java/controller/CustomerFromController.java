@@ -1,5 +1,6 @@
 package controller;
 
+import com.google.inject.Inject;
 import com.jfoenix.controls.JFXTextField;
 import dto.Customer;
 import javafx.event.ActionEvent;
@@ -40,7 +41,8 @@ public class CustomerFromController {
     @FXML
     private TextField txtSalary;
 
-    CustomerService service = ServiceFactory.getInstance().getServiceType(ServiceType.CUSTOMER);
+    @Inject
+    CustomerService service;
 
     @FXML
     void btnAddCustomerOnAction(ActionEvent event) {
